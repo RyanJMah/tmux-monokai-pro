@@ -27,16 +27,16 @@ main()
   show_kubernetes_context_label=$(get_tmux_option "@monokai-kubernetes-context-label" "")
   IFS=' ' read -r -a plugins <<< $(get_tmux_option "@monokai-plugins" "network-ping cpu-usage ram-usage")
 
-  # Monokai Pro Color Pallette  
-  white='#fcfcfa'
-  black='#2d2a2e'
-  gray='#727072'
-  red='#ff6188'
-  green='#a9dc76'
-  yellow='#ffd866'
-  blue='#78dce8'
-  magenta='#fc9867'
-  cyan='#ab9df2'
+  # Color Pallette
+  white='#f7f1ff'
+  black='#24292e'
+  gray='#3a363b'
+  red='#fc618d'
+  green='#7bd88f'
+  yellow='#fed484'
+  blue='#79b8ff'
+  magenta='#ac82cb'
+  cyan='#5ad4e6'
 
   # Handle left icon configuration
   case $show_left_icon in
@@ -101,9 +101,9 @@ main()
 
   # pane border styling
   if $show_border_contrast; then
-    tmux set-option -g pane-active-border-style "fg=${green}"
+    tmux set-option -g pane-active-border-style "fg=${red}"
   else
-    tmux set-option -g pane-active-border-style "fg=${green}"
+    tmux set-option -g pane-active-border-style "fg=${red}"
   fi
   tmux set-option -g pane-border-style "fg=${gray}"
 
@@ -115,10 +115,10 @@ main()
 
   # Status left
   if $show_powerline; then
-    tmux set-option -g status-left "#[fg=${green},bg=${black}]#{?client_prefix,#[fg=${yellow}],}#[bg=${green},fg=${black},bold]#{?client_prefix,#[bg=${yellow}],} ${left_icon} #[fg=${green},bg=${gray}]#{?client_prefix,#[fg=${yellow}],}${left_sep}"
+    tmux set-option -g status-left "#[fg=${red},bg=${black}]#{?client_prefix,#[fg=${yellow}],}#[bg=${red},fg=${black},bold]#{?client_prefix,#[bg=${yellow}],} ${left_icon} #[fg=${red},bg=${gray}]#{?client_prefix,#[fg=${yellow}],}${left_sep}"
     powerbg=${gray}
   else
-    tmux set-option -g status-left "#[bg=${green},fg=${black},bold]#{?client_prefix,#[bg=${yellow}],} ${left_icon} "
+    tmux set-option -g status-left "#[bg=${red},fg=${black},bold]#{?client_prefix,#[bg=${yellow}],} ${left_icon} "
   fi
 
   # Status right
@@ -128,7 +128,7 @@ main()
 
     if [ $plugin = "git" ]; then
       IFS=' ' read -r -a colors  <<< $(get_tmux_option "@monokai-git-colors" "green black")
-        script="#($current_dir/git.sh)"     
+        script="#($current_dir/git.sh)"
     fi
 
     if [ $plugin = "battery" ]; then
@@ -142,7 +142,7 @@ main()
     fi
 
     if [ $plugin = "cpu-usage" ]; then
-      IFS=' ' read -r -a colors <<< $(get_tmux_option "@monokai-cpu-usage-colors" "magenta black")
+      IFS=' ' read -r -a colors <<< $(get_tmux_option "@monokai-cpu-usage-colors" "blue black")
       script="#($current_dir/cpu_info.sh)"
     fi
 
