@@ -30,7 +30,7 @@ main()
   # Color Pallette
   white='#f7f1ff'
   black='#24292e'
-  gray='#3a363b'
+  gray='#343035'
   red='#fc618d'
   green='#7bd88f'
   yellow='#fed484'
@@ -45,7 +45,7 @@ main()
     session)
       left_icon="#S";;
     window)
-      left_icon="#W";;
+      left_icon="#I";;
     *)
       left_icon=$show_left_icon;;
   esac
