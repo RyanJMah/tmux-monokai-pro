@@ -30,7 +30,7 @@ main()
   # Color Pallette
   white='#fcfcfa'
   black='#24292e'
-  gray='#343035'
+  gray='#3a363b'
   red='#fc618d'
   green='#7bd88f'
   yellow='#fed484'
