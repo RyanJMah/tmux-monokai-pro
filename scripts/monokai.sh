@@ -28,7 +28,7 @@ main()
   IFS=' ' read -r -a plugins <<< $(get_tmux_option "@monokai-plugins" "network-ping cpu-usage ram-usage")
 
   # Color Pallette
-  white='#f7f1ff'
+  white='#fcfcfa'
   black='#24292e'
   gray='#343035'
   red='#fc618d'
