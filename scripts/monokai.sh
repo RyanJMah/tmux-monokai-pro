@@ -30,8 +30,13 @@ main()
   # Color Pallette
   white='#fcfcfa'
   black='#24292e'
-  # gray='#3a363b'
-  gray='#343035'
+
+  # For "dark" vim theme
+  # gray='#343035'
+
+  # For "darker" vim theme
+  gray='#2d2d2d'
+
   red='#fc618d'
   green='#7bd88f'
   yellow='#fed484'
